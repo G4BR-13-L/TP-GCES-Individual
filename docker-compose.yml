@@ -1,0 +1,20 @@
+version: '3'
+services:
+  mongodb:
+    container_name: database_mongo_python_gces
+    image: mongo
+    ports:
+      - '27017:27017'
+    networks:
+      - gces_tp_network
+
+    environment:
+      - MB_DB_TYPE=postgres
+      - MB_DB_DBNAME=lappis
+      - MB_DB_PORT=5432
+      - MB_DB_USER=lappis
+      - MB_DB_PASS=lappis
+      - MB_DB_HOST=postgres
+
+networks:
+  gces_tp_network:
